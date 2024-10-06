@@ -17,7 +17,6 @@ export default function StockResults() {
 
   return (
     <div className="bg-gray-900 min-h-screen text-white p-8 relative">
-      {/* Logo in top left corner */}
       <div className="absolute top-4 left-4 z-20">
         <Logo />
       </div>
