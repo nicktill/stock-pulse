@@ -1,5 +1,5 @@
 # StockPulse 📈🚀
-Stock Pulse is a modern, interactive web application designed to help investors discover hidden gem stocks in the market. By leveraging advanced algorithms and real-time data, Stock Pulse aims to uncover investment opportunities that institutional investors, hedge funds, and other market influencers are focusing on.
+StockPulse empowers retail investors with real-time, AI-driven insights by automatically scouring reputable online sources for financial data and sentiment. It uses AI to crowdsource and analyze data, delivering curated stock picks. Inspired by r/wallstreetbets, Stock Pulse simplifies market research, presenting users with strong recommendations
 ![Stock Pulse · 6 26pm · 10-06](https://github.com/user-attachments/assets/9d1df661-de23-4472-95d0-bc262fda22aa)
 ![Stock Pulse · 6 28pm · 10-06](https://github.com/user-attachments/assets/c0810372-f900-422f-9885-f34359e72a36)
 ![Stock Pulse · 6 32pm · 10-06](https://github.com/user-attachments/assets/50269c01-efeb-47bc-8baf-0f0434eeaffc)
