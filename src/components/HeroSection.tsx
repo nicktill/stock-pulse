@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { Loader2 } from 'lucide-react';
+import Logo from './Logo';
 
 const phrases = [
   'institutional investors',
@@ -43,6 +45,11 @@ export default function HeroSection({ onPulseClick, loading }) {
 
   return (
     <main className="relative flex flex-col items-center justify-center min-h-screen text-white">
+      {/* Logo in top left corner */}
+      <div className="absolute top-4 left-4 z-20">
+        <Logo />
+      </div>
+
       <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-teal-400 via-blue-500 to-green-400 bg-clip-text text-transparent">
           Discover the Hidden Gems of the Stock Market
@@ -52,8 +59,7 @@ export default function HeroSection({ onPulseClick, loading }) {
           Uncover the stocks that{' '}
           <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-green-400 bg-clip-text text-transparent">
             {displayedText}
-          </span>{' '}
-          <span className="inline-block w-0.5 h-8 bg-white animate-blink"></span>
+          </span>
           {' '}are investing in
         </h2>
 
@@ -64,15 +70,11 @@ export default function HeroSection({ onPulseClick, loading }) {
             whileTap={{ scale: 0.95 }}
             className="mt-8 px-8 py-4 rounded-full text-xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
           >
-            Find Pulse Stocks
+            Pulse Stocks
           </motion.button>
         ) : (
           <div className="mt-10 flex flex-col items-center">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-              className="w-16 h-16 border-t-4 border-blue-500 border-solid rounded-full"
-            />
+            <Loader2 className="w-16 h-16 animate-spin text-blue-500" />
             <p className="mt-6 text-lg text-gray-300">Performing Market Research...</p>
           </div>
         )}

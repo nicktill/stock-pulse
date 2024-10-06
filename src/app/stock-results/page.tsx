@@ -1,6 +1,8 @@
 "use client";
 
+import React from 'react';
 import StockCard from '../../components/StockCard';
+import Logo from '../../components/Logo';
 
 export default function StockResults() {
   // Mock Stock Data
@@ -14,8 +16,13 @@ export default function StockResults() {
   ];
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white p-8">
-      <h1 className="text-4xl font-bold text-center mb-8">Pulse Stocks Results</h1>
+    <div className="bg-gray-900 min-h-screen text-white p-8 relative">
+      {/* Logo in top left corner */}
+      <div className="absolute top-4 left-4 z-20">
+        <Logo />
+      </div>
+
+      <h1 className="text-4xl font-bold text-center mb-8 pt-16">Pulse Stocks Results</h1>
       <div className="flex flex-wrap justify-center">
         {stockData.map((stock) => (
           <StockCard
