@@ -1,3 +1,4 @@
+import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const mockData = [
@@ -15,7 +16,7 @@ export default function StockCard({ symbol, name, currentPrice, changeToday, pas
       <h2 className="text-2xl font-bold">{name} ({symbol})</h2>
       <p className="text-lg mt-2">Current Price: ${currentPrice.toFixed(2)}</p>
       <p className={`mt-1 ${changeToday >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-        Today's Change: {changeToday >= 0 ? '+' : ''}{changeToday.toFixed(2)}%
+        Today&apos;s Change: {changeToday >= 0 ? '+' : ''}{changeToday.toFixed(2)}%
       </p>
       <div className="my-6">
         <ResponsiveContainer width="100%" height={200}>
