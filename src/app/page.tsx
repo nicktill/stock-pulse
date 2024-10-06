@@ -1,37 +1,31 @@
-"use client";
+'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import HeroSection from '../components/HeroSection';
-import StockDiscoveryFilters from '../components/StockDiscoveryFilters';
+import ModernFilters from '../components/ModernFilters';
 import Footer from '../components/Footer';
+import StockDiscoveryFilters from '@/components/StockDiscoveryFilters';
+
+const ThreeJSBackground = dynamic(() => import('../components/ThreeJSBackground'), { ssr: false });
 
 export default function LandingPage() {
-  const [loading, setLoading] = useState(false);
-  const router = useRouter(); // Correcting to use next/navigation
-
-  const handlePulseClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      router.push('/stock-results'); // Navigate to the Stock Results page
-    }, 2000);
-  };
-
   return (
-    <div className="min-h-screen bg-gray-900 text-white font-sans">
+    <div className="min-h-screen bg-gray-900 text-white font-sans relative overflow-hidden">
       <title>Stock Pulse</title>
       <meta name="description" content="Discover hidden gem stocks with Stock Pulse." />
       <link rel="icon" href="/favicon.ico" />
 
-      {/* Hero Section */}
-      <HeroSection onPulseClick={handlePulseClick} loading={loading} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ThreeJSBackground />
+      </Suspense>
 
-      {/* Stock Discovery Filters */}
-      <StockDiscoveryFilters />
-
-      {/* Footer */}
-      <Footer />
+      <div className="relative z-10">
+        {/* <ModernFilters /> */}
+        {/* <StockDiscoveryFilters /> */}
+        <HeroSection />
+        <Footer />
+      </div>
     </div>
   );
 }
