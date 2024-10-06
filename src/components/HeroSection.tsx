@@ -20,7 +20,7 @@ export default function HeroSection({ onPulseClick, loading }) {
     const currentPhrase = phrases[currentPhraseIndex];
     
     if (!isDeleting && displayedText === currentPhrase) {
-      setTimeout(() => setIsDeleting(true), 1200);
+      setTimeout(() => setIsDeleting(true), 1600);
     } else if (isDeleting && displayedText === '') {
       setIsDeleting(false);
       setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);

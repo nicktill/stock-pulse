@@ -4,14 +4,16 @@ import dynamic from 'next/dynamic';
 import { Suspense, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import HeroSection from '../components/HeroSection';
-import ModernFilters from '../components/ModernFilters';
 import Footer from '../components/Footer';
-import StockDiscoveryFilters from '@/components/StockDiscoveryFilters';
+import StockDiscoveryFilters from '@/components/StockDiscoveryFilters'; 
+import { Filter } from 'lucide-react'; // Importing the filter icon
+import ModernFilters from '@/components/ModernFilters';
 
 const ThreeJSBackground = dynamic(() => import('../components/ThreeJSBackground'), { ssr: false });
 
 export default function LandingPage() {
   const [loading, setLoading] = useState(false);
+  const [showFilters, setShowFilters] = useState(false); // State to manage filter modal visibility
   const router = useRouter();
 
   useEffect(() => {
@@ -25,6 +27,7 @@ export default function LandingPage() {
       router.push('/stock-results');
     }, 2000);
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-900 text-white font-sans relative overflow-hidden">
@@ -37,11 +40,29 @@ export default function LandingPage() {
       </Suspense>
 
       <div className="relative z-10">
-        {/* <ModernFilters /> */}
-        {/* <StockDiscoveryFilters /> */}
+        {/* Filter icon in the top-right */}
+        <div className="absolute top-4 right-4 z-20">
+          <button onClick={() => setShowFilters(true)}>
+            <Filter className="h-6 w-6 text-white" /> {/* Simple filter icon */}
+          </button>
+        </div>
+
         <HeroSection onPulseClick={handlePulseClick} loading={loading} />
-        <Footer />
       </div>
+
+      {/* Modal for StockDiscoveryFilters */}
+      {showFilters && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-lg w-full max-w-4xl relative">
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              onClick={() => setShowFilters(false)}
+            >
+            </button>
+            <ModernFilters onClose={() => setShowFilters(false)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

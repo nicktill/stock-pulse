@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.10.1",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@heroicons/react": "^2.1.5",
     "@react-three/drei": "^9.97.6",
     "@react-three/fiber": "^8.15.16",
@@ -19,6 +23,8 @@
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
+    "react-toastify": "^10.0.5",
     "recharts": "^2.12.7",
     "three": "^0.161.0"
   },

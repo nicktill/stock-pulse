@@ -28,3 +28,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.Toastify__toast-container {
+  position: fixed !important; /* Ensures it's fixed relative to the viewport */
+  z-index: 9999 !important;   /* Ensures it's above modals and other elements */
+  top: 1rem !important;       /* Adjust positioning */
+  right: 1rem !important;     /* Adjust positioning */
+}
+
