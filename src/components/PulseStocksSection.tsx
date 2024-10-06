@@ -19,7 +19,7 @@ export default function PulseStocksSection() {
           onClick={handlePulseClick}
           className="bg-gradient-to-r from-teal-400 to-blue-500 text-white px-10 py-4 rounded-full text-2xl font-bold hover:shadow-lg transition-transform transform hover:scale-110 shadow-xl"
         >
-          Find Pulse Stocks
+        Pulse Stocks
         </button>
       )}
       {loading && (
