@@ -1,4 +1,4 @@
-# StockPulse 📈🚀
+# StockPulse [WIP]
 StockPulse empowers retail investors with real-time, AI-driven insights by automatically scouring reputable online sources for financial data and sentiment. It uses AI to crowdsource and analyze data, delivering curated stock picks. Inspired by r/wallstreetbets, Stock Pulse simplifies market research, presenting users with strong recommendations
 ![Stock Pulse · 6 26pm · 10-06](https://github.com/user-attachments/assets/9d1df661-de23-4472-95d0-bc262fda22aa)
 ![Stock Pulse · 6 28pm · 10-06](https://github.com/user-attachments/assets/c0810372-f900-422f-9885-f34359e72a36)
